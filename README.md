@@ -16,3 +16,36 @@ For Using Boto3, we need to Perform below steps at the begining -
     for this - aws configure ( and provide both values )
 
 
+# About Lambda
+Lambda can Trigger Based on Event thats y there is a event passed here.
+if we dont pass anything in event thats also acceptable ( than Lambda will behave like normal func )
+
+import json
+def lambda_handler(event, context):
+    # TODO implement
+    res= 'Hello {} ! What are you doing here?'.format(event['name'])
+    return res
+
+Event while run -
+{
+  "name": "sagar"
+}
+
+Output - 
+"Hello sagar ! What are you doing here?"
+
+
+# Lambda Performance Tuning
+
+Time out Increase 15 min
+Memory Increased 128 MB
+
+Note - it should be running in same VPC where resources are then only it can access those resources.
+
+# Lambda Versions & Alias
+Version & Alias in Lambda - by Cloudwatch rule to (Target) Lambda - but this does not look so nice.
+
+
+
+
+

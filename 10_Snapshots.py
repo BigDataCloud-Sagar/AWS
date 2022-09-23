@@ -18,6 +18,10 @@ for instance in ec2.instances.filter(Filters=myfilter):
         snapshot=vol.create_snapshot(Description='By using Boto3')
         snapshot_ids.append(snapshot.snapshot_id)
 
+
+# SNS is targetting Email  and it for sending list of SNAPSHOT IDS
+
+
 sns_client.publish(
     TopicArn='arn:aws:sns:us-east-1:012413420184:snapshot',
     Subject='EBS Snapshots',
