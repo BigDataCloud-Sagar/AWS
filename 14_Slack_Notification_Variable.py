@@ -2,6 +2,7 @@ import requests
 import json
 import os
 
+# SLACK_WEBHOOK is an Env Variable at Lambda
 slack_web_hook= os.environ['SLACK_WEBHOOK']
 
 def send_Slack(event, context):
